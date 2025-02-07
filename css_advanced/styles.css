@@ -1,0 +1,612 @@
+/* GLOBAL VARIABLES:
+   Defines recurring colors, fonts, and styles for use throughout the stylesheet. */
+   :root {
+    --color-background: #071629;
+    --color-text: #FFF;
+    --color-accent: #C271FF;
+    --color-video: rgba(7, 22, 41, 0.50);
+    --color-btn-hover: #9678FC;
+    --font-family-base: 'Source Sans Pro', sans-serif;
+    --font-weight-bold: 700;
+    --font-weight-medium: 600;
+    --font-weight-normal: 400;
+    --font-weight-light: 300;
+    --border-radius-round: 50%;
+    --shadow-box: 0px 2px 20px 0px rgba(0, 0, 0, 0.50);
+  }
+  
+  /* BASE BODY STYLE:
+     Resets margins and paddings, sets default font, and applies box-sizing to all elements. */
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-family-base);
+    box-sizing: border-box;
+  }
+  
+  /* MAIN HEADER:
+     Utilizes Flexbox for proper alignment and spacing between the logo and navigation elements. */
+  .main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    margin: 10px;
+    background-color: transparent;
+  }
+  
+  /* LOGO IN HEADER:
+     Sets size and prevents the logo from shrinking in a flexbox layout. */
+  .logo-header {
+    width: 10.438rem;
+    height: 1.841rem;
+    flex-shrink: 0;
+  }
+  
+  /* NAVIGATION:
+     Alignment and styling of navigation links, including color, font size, and text transformation. */
+  .navigation {
+    display: inline-flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 52px;
+    flex-shrink: 0;
+    color: var(--color-text);
+    font-size: 0.75rem;
+    font-weight: var(--font-weight-bold);
+    line-height: normal;
+  }
+  
+  .nav-link {
+    color: var(--color-text);
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+  
+  /* MAIN BANNER:
+     Positions and sizes the banner, including background images and filter styles. */
+  .banner {
+    position: relative;
+    width: 100%;
+    height: 1440px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .banner::before, .banner::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    z-index: -1;
+  }
+  
+  .banner::before {
+    top: -8.125rem;
+    background-image: url(assets/images/img_bg.png);
+    background-repeat: no-repeat;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+  }
+  
+  .banner::after {
+    top: -6.25rem;
+    background: radial-gradient(85.90% 85.90% at 50.00% 14.10%, rgba(41, 48, 61, 0.00) 0%, var(--color-background) 100%), transparent;
+    background-blend-mode: normal, color;
+  }
+  
+  /* Styles for the main title, subtitles, and registration button in the banner. */
+  .banner-content {
+    text-align: center;
+    margin-top: 10.5rem;
+  }
+  
+  .main-title {
+    color: var(--color-text);
+    font-size: 7.5rem;
+    font-weight: var(--font-weight-bold);
+    text-align: center;
+    margin: 0;
+    margin-top: -50px;
+    line-height: 150px;
+  }
+  
+  .subtitle {
+    display: inline-block;
+    color: var(--color-text);
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: var(--font-weight-bold);
+    line-height: 4rem;
+    margin: 0 27px;
+  }
+  
+  .register-btn {
+    display: block;
+    background-color: var(--color-accent);
+    box-shadow: var(--shadow-box);
+    border-radius: 1.375rem;
+    color: var(--color-text);
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin: 20px auto;
+    padding: 10px 30px;
+    width: 12.5rem;
+    height: 2.9rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .register-btn:hover {
+    background-color: var(--color-btn-hover);
+  }
+  
+  /* PROFILES SECTION:
+     Styles for layout and design of profile sections, including images, titles, and descriptions. */
+  
+  .block-pro {
+    text-align: center;
+    margin-top: 150px;
+  }
+  
+  .block-pro h2 {
+    color: var(--color-text);
+    font-family: var(--font-family-base);
+    font-size: 2rem;
+    font-weight: var(--font-weight-light);
+    margin-bottom: 5.44rem;
+    font-style: normal;
+  }
+  
+  .block-pro h2 .span-bp {
+    color: var(--color-accent);
+    font-weight: var(--font-weight-bold);
+  }
+  
+  .picture-pros {
+    display: flex;
+    justify-content: center;
+    gap: 8.17rem;
+  }
+  
+  .picture-pros .picture-pro {
+    width: 9.375rem;
+    text-align: center;
+  }
+  
+  .picture-pros img {
+    width: 9.375rem;
+    height: 9.375rem;
+    border-radius: var(--border-radius-round);
+    margin-bottom: 20px;
+  }
+  
+  .picture-pros h3 {
+    color: var(--color-text);
+    font-size: 1.125rem;
+    font-weight: 900;
+    line-height: 1.6875rem;
+  }
+  
+  .picture-pros p {
+    color: var(--color-text);
+    font-size: 1rem;
+    font-style: italic;
+    line-height: 1.5rem;
+    font-weight: var(--font-weight-normal);
+  }
+  
+  /* QUOTE SECTION:
+     Formatting of the quote section, including the image, quote text, author, and context. */
+  .quote-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -120px;
+    background-color: var(--color-accent);
+    color: var(--color-text);
+    font-family: var(--font-family-base);
+    height: 24.5rem;
+    width: 100%;
+  }
+  
+  .quote-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .quote-container img {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    margin-right: 5rem;
+  }
+  
+  .quote-block {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width: 45.625rem;
+    height: 9.875rem;
+  }
+  
+  .quote-text {
+    font-size: 1.375rem;
+    font-weight: var(--font-weight-normal);
+    line-height: 2.1rem;
+    margin: 0 0 0.5rem 0;
+  }
+  
+  .quote-author {
+    font-size: 1.375rem;
+    font-weight: var(--font-weight-bold);
+    font-style: normal;
+    line-height: 2.1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .quote-context {
+    font-size: 1.375rem;
+    font-style: italic;
+    font-weight: var(--font-weight-normal);
+    margin: 0;
+    line-height: 2.1rem;
+  }
+  
+  /* VIDEO SECTION:
+     Configuration and styling of video cards, including thumbnails, titles, descriptions, and ratings. */
+  .video-section {
+    background-color: var(--color-text);
+    text-align: center;
+    font-family: var(--font-family-base);
+    width: 100%;
+  }
+  
+  .video-section-title {
+    color: var(--color-background);
+    font-size: 2rem;
+    margin-top: 5.4rem;
+    margin-bottom: 4.69rem;
+    font-weight: var(--font-weight-light);
+    line-height: 40.22px;
+    font-style: normal;
+  }
+  
+  .video-section-title span {
+    color: var(--color-accent);
+    font-size: 2rem;
+    font-weight: var(--font-weight-bold);
+  }
+  
+  .video-cards-container {
+    display: flex;
+    justify-content: center;
+    gap: 1.94rem;
+    padding: 1rem;
+    margin: 0 auto;
+    width: 76.75rem;
+    height: 28.125rem;
+  }
+  
+  .video-card {
+    width: 15.93rem;
+    height: auto;
+    margin-bottom: 3rem;
+    text-align: left;
+    position: relative;
+  }
+  
+  .video-thumbnail {
+    width: 15.93rem;
+    height: 9.62rem;
+    border-radius: 5px 5px 0 0;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .video-thumbnail img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  .play-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 4rem;
+    height: 4rem;
+    background: url('assets/images/play.svg') no-repeat center center;
+    background-size: contain;
+    cursor: pointer;
+  }
+  
+  .video-title {
+    color: var(--color-background);
+    font-size: 1rem;
+    margin-top: 1.5rem;
+    margin-left: 1rem;
+    font-weight: var(--font-weight-bold);
+    font-family: var(--font-family-base);
+    line-height: 20.11px;
+    font-style: normal;
+    width: 120px;
+    height: 20px;
+  }
+  
+  .video-description {
+    color: var(--color-video);
+    font-size: 0.875rem;
+    margin-top: 0.47rem;
+    margin-left: 1rem;
+    font-weight: var(--font-weight-normal);
+    line-height: 1.5rem;
+    font-family: var(--font-family-base);
+    width: 15.125rem;
+    height: 48px;
+    font-style: normal;
+  }
+  
+  .video-author {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    margin-top: 0.75rem;
+    margin-left: 1rem;
+  }
+  
+  .author-image {
+    width: 1.875rem;
+    height: 1.875rem;
+    border-radius: 50%;
+  }
+  
+  .author-name {
+    color: var(--color-accent);
+    font-family: var(--font-family-base);
+    font-size: 0.875rem;
+    font-weight: var(--font-weight-medium);
+    line-height: 1.6875rem;
+    font-style: normal;
+  }
+  
+  .star-rating {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 1rem;
+    margin-top: -10px;
+  }
+  
+  .stars {
+    display: flex;
+    width: 6.6875rem;
+    height: 0.9375rem;
+  }
+  
+  .rating-time {
+    color: var(--color-accent);
+    font-size: 0.875rem;
+    margin-right: 1rem;
+    font-family: var(--font-family-base);
+    font-weight: var(--font-weight-medium);
+    font-style: normal;
+    line-height: 1.6875rem;
+  }
+  
+  /* MEMBERSHIP SECTION:
+     Styles for the membership offers section, including layout of membership blocks, icons, headings, and descriptions. */
+  .membership-section {
+    font-family: var(--font-family-base);
+    background-color: var(--color-background);
+    color: var(--color-text);
+    text-align: center;
+    padding: 50px 0;
+    height: 31.375rem;
+    width: 100%;
+  }
+  
+  .membership-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-basis: calc(20% - 30px);
+    flex-shrink: 1;
+    margin: 10px 5px;
+  }
+  
+  .membership-block-container {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .membership-title {
+    font-size: 2rem;
+    font-weight: var(--font-weight-light);
+    line-height: 40px;
+    margin-bottom: 3.62rem;
+    margin-top: 2.5rem;
+    font-style: normal;
+  }
+  
+  .membership-title span {
+    color: var(--color-accent);
+    font-weight: var(--font-weight-bold);
+  }
+  
+  .membership-icon {
+    width: 2.72913rem;
+    height: 2.20956rem;
+    margin-bottom: 1.66rem;
+  }
+  
+  .membership-heading {
+    font-size: 1.125rem;
+    font-weight: var(--font-weight-medium);
+    font-style: normal;
+    line-height: 26px;
+    margin-bottom: 0.81rem;
+    font-style: normal;
+    width: 16rem;
+    height: 26px;
+  }
+  
+  .membership-description {
+    width: 13.25rem;
+    height: 52px;
+    font-size: 0.875rem;
+    font-weight: var(--font-weight-normal);
+    font-style: normal;
+    line-height: 1.625rem;
+  }
+  
+  .membership-button {
+    background-color: var(--color-accent);
+    width: 12.9rem;
+    height: 2.75rem;
+    color: var(--color-text);
+    border: none;
+    border-radius: 1.375rem;
+    padding: 0.81rem 1.22rem 0.81rem 1.34rem;
+    font-size: 0.875rem;
+    font-weight: var(--font-weight-medium);
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-top: 4rem;
+    line-height: 17.6px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .membership-button:hover {
+    background-color: #9678FC;
+  }
+  
+  /* FAQ SECTION:
+     Styles for layout and typography of the FAQ section, including questions and answers. */
+  .faq-section {
+    max-width: 90rem;
+    max-height: 232.375rem;
+    margin: 0 auto;
+    padding: 50px 20px;
+    font-family: var(--font-family-base);
+  }
+  
+  .faq-title {
+    text-align: center;
+    font-size: 3.75rem;
+    font-style: normal;
+    font-weight: var(--font-weight-light);
+    color: var(--color-background);
+    line-height: 75.42px;
+    margin-bottom: 4.63rem;
+    margin-top: 4.19rem;
+  }
+  
+  .faq-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 1.875rem;
+  }
+  
+  .faq-row {
+    width: 29%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .faq-item {
+    width: 100%;
+    background-color: var(--color-text);
+    margin-bottom: 1rem;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .faq-question {
+    text-align: left;
+    font-size: 1rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--color-background);
+    margin-bottom: 1.8rem;
+    width: 195px;
+    height: 20px;
+  }
+  
+  .faq-answer {
+    text-align: left;
+    font-size: 0.875rem;
+    font-weight: var(--font-weight-normal);
+    color: var(--color-video);
+    line-height: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* FOOTER:
+     Styles for the footer, including layout, logo, social media links, and text. */
+  .footer {
+    background-color: var(--color-background); 
+    font-family: var(--font-family-base);
+    width: 100%;
+  }
+  
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    max-width: 90rem;
+    height: 15.5625rem;
+    margin: 0 auto;
+    gap: 1.12619rem;
+    padding: 0.00144rem 0rem 0.03225rem 0.037rem;
+  }
+  
+  .footer-logo-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 40px;
+    
+  }
+  
+  .footer-logo {
+    margin-left: 20px;
+    width: 169px;
+    height: 30px;
+  }
+  
+  .footer-social-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 8.125rem;
+    height: 1.875rem;
+    margin-right: 20px;
+    cursor: pointer;
+  }
+  
+  .footer-text {
+    padding-top: 40px;
+    color: var(--color-text);
+    font-weight: var(--font-weight-normal);
+    line-height: 15.08px;
+    opacity: 0.3517;
+    font-size: 0.75em;
+    margin-bottom: 1.44rem;
+    width: 120px;
+    height: 15px;
+  }
+  
